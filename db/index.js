@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 // If no env has been set, we dynamically set it to whatever the folder name was upon the creation of the app
 
 const MONGO_URI =
-  process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/Tea-Explorer";
+"mongodb+srv://Gabriel:6IKVRbqusGKvLIew@cluster0.gses18a.mongodb.net/?retryWrites=true&w=majority"
 
 mongoose
   .connect(MONGO_URI)
@@ -14,6 +14,8 @@ mongoose
     const databaseName = x.connections[0].name;
     console.log(`Connected to Mongo! Database name: "${databaseName}"`);
   })
-  .catch((err) => {
+  .catch((err) => { 
     console.error("Error connecting to mongo: ", err);
   });
+
+ 
