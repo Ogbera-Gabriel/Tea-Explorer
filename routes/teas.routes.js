@@ -1,7 +1,8 @@
 const router = require("express").Router();
 const Tea = require('../models/Tea.model.js')
-
-router.get('/teas', async (req, res) => {
+const isLoggedOut = require("../middleware/isLoggedOut");
+const isLoggedIn = require("../middleware/isLoggedIn");
+router.get('/teas', isLoggedIn, async (req, res) => {
     try{
         let allTeasFromDB = await Tea.find()
         console.log(allTeasFromDB)
