@@ -1,8 +1,20 @@
 <h2>Teas</h2>
-{{#each teas}}
- <h4>{{name}}</h4>
- <h5>Origin:{{origin}}</h5>
- <h5>Type:{{type}}</h5>
- <img src='{{image}}' width="200px" height="200px" alt="{{name}}">
 
-{{/each}}
+<hr>
+<div class="row">
+  {{#each teas}}
+    <div class="col-md-4 mb-5">
+      <div class="card" style="width: 18rem;">
+        <img src="{{image}}" class="card-img-top" alt="{{name}}">
+        <div class="card-body">
+          <h5 class="card-title">{{name}}</h5>
+          <p class="card-text">{{origin}}</p>
+          <a href="/tearooms/{{_id}}">See Details</a>
+          
+        </div>
+      </div>
+    </div>
+  
+  {{/each}}
+  <hr />
+</div>
