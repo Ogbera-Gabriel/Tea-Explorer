@@ -45,10 +45,10 @@ router.get('/teas/:teaId', isLoggedIn, async(req, res) =>{
 router.post('/review/create/:teaId', isLoggedIn, async (req, res) => {
     try {
         const { teaId } = req.params;
-        const { content, author } = req.body;
+        const { content, user_id } = req.body;
 
         // Create a new review
-        const review = await ReviewModel.create({ content });
+        const review = await ReviewModel.create({ content, user_id });
 
         // Get the details of the currently logged-in user
         const user = req.session.currentUser;
@@ -65,6 +65,21 @@ router.post('/review/create/:teaId', isLoggedIn, async (req, res) => {
     }
 });
 
+router.post('/review/delete/:reviewId', isLoggedIn, async(req, res) => {
+    try {
+        const { reviewId} = req.params;
+        const removeReview = await ReviewModel.findByIdAndRemove(reviewId);
+        const user = req.session.currentUser
+        await User.findByIdAndUpdate(removeReview.user_id, {$pull: {review: removeReview._id}})
+        
+       
+        res.redirect('/teas')
+        
+        
+    } catch (error) {
+        
+    }
+})
 
 
 module.exports = router;

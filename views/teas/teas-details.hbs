@@ -22,7 +22,7 @@
     {{#each teas.review}}
     <div>
         <!-- Actually displaying the review -->
-        <p><span>By {{user.username}}</span>: {{content}}</p>
+        <p><span>By {{review.author.username}}</span>: {{content}}</p>
         <!-- Deleting the Review -->
         <form action="/review/delete/{{_id}}" method="post">
             <button type="submit">Delete</button>
