@@ -95,6 +95,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
       errorMessage:
         "All fields are mandatory. Please provide username, email and password.",
     });
+    res.redirect("/teas")
 
     return;
   }
