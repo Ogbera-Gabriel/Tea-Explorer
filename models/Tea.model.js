@@ -7,6 +7,7 @@ const teaSchema = new Schema (
       description: String,
       caffeine: String,
       tasteDescription: String,
+      type: String,
       review: [{
         type: Schema.Types.ObjectId,
         ref: 'Review'
