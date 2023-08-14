@@ -3,3 +3,34 @@
 <div>
     <img src="{{teas.image}}"  width="600px" height="600px" alt="{{teas.name}}">
 </div>
+
+<p>Type: {{teas.type}}</p>
+<p>Origin : {{teas.origin}}</p>
+<p>Caffeine: {{teas.caffeine}}</p>
+<p>Description: {{teas.description}}</p>
+<p>Taste-Description: {{teas.tasteDescription}}</p>
+
+{{!-- <form action="/review/create/{{tea._id}}" method="post">
+    <select name="author">
+        {{#each users}}
+            <option value="{{_id}}">{{username}}</option>
+        {{/each}}
+    </select>
+    <label for="content">Content</label>
+    <textarea name="content" id="content" cols="30" rows="5"></textarea>
+    <button type="submit">Create the review</button>
+</form>
+<!-- End of the Form to Create a Review -->
+<br>
+<!-- Display all the Reviews of the Book that we're seeing -->
+    {{#each teas.reviews}}
+    <div>
+        <!-- Actually displaying the review -->
+        <p><span>By {{author.username}}</span>: {{content}}</p>
+        <!-- Deleting the Review -->
+        <form action="/review/delete/{{_id}}" method="post">
+            <button type="submit">Delete</button>
+        </form>
+    </div>
+    {{/each}}
+    <a href="/books">Return</a> --}}
