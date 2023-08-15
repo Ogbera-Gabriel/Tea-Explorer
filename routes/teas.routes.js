@@ -8,24 +8,7 @@ const fileUploader = require("../config/cloudinary.config");
 
 
 
-router.get("/teas/create", isLoggedIn, async (req, res) =>{
-  try {
-    res.render('teas/new-tea.hbs');
-  } catch (error) {
-    console.log(error);
-  }
-})
 
-
-router.post('teas/create', isLoggedIn, fileUploader.single("tea-cover-image"),  async(req, res) =>{
- try {
-    const {name, origin, description, caffeine, tasteDescription, type} = req.body
-    await Tea.create({name, origin, description, caffeine, tasteDescription, type, image: req.file.path})
-    res.redirect("/teas");
- } catch (error) { 
-   console.log(error);
- }
-})
 
 router.get('/teas', isLoggedIn, async (req, res) => {
     try{
@@ -38,6 +21,25 @@ router.get('/teas', isLoggedIn, async (req, res) => {
         console.log(error)
     }
 })
+
+router.get("/teas/create", isLoggedIn, async (req, res) =>{
+    try {
+      res.render('teas/new-tea.hbs');
+    } catch (error) {
+      console.log(error);
+    }
+  })
+  
+  
+  router.post('/teas/create', isLoggedIn, fileUploader.single("tea-cover-image"),  async(req, res) =>{
+   try {
+      const {name, origin, description, caffeine, tasteDescription, type} = req.body;
+      await Tea.create({name, origin, description, caffeine, tasteDescription, type, image: req.file.path})
+      res.redirect("/teas");
+   } catch (error) { 
+     console.log('Error while creating Tea', error);
+   }
+  })
 
 router.get('/teas/:teaId', isLoggedIn, async(req, res) =>{
     try {
@@ -149,5 +151,7 @@ router.post("/teas/favorite/:id", isLoggedIn, async (req, res, next) => {
 
   }
   })
+
+
 
 module.exports = router;
