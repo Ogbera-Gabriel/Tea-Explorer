@@ -32,11 +32,10 @@ router.get('/teas/:teaId', isLoggedIn, async(req, res) =>{
                 path: 'author',
                 model: 'User'
             }
-        })
+        });
 
-        //console.log(teasDetail)
 
-        res.render('teas/teas-details.hbs', {teas: teasDetail})
+        res.render('teas/teas-details.hbs', {teas: teasDetail, teasReviews: teasDetail.review})
     } catch (error) {
         console.log(error)
     }
@@ -45,14 +44,13 @@ router.get('/teas/:teaId', isLoggedIn, async(req, res) =>{
 router.post('/review/create/:teaId', isLoggedIn, async (req, res) => {
     try {
         const { teaId } = req.params;
-        const { content, user_id } = req.body;
-
-        // Create a new review
-        const review = await ReviewModel.create({ content, user_id });
+        const { content} = req.body;
 
         // Get the details of the currently logged-in user
         const user = req.session.currentUser;
-        console.log(user);
+
+        // Create a new review
+        const review = await ReviewModel.create({ content, author: user});
 
         // Update the tea's review array and the user's review array
         const teaUpdate = await Tea.findByIdAndUpdate(teaId, { $push: { review: review._id } });
@@ -65,12 +63,16 @@ router.post('/review/create/:teaId', isLoggedIn, async (req, res) => {
     }
 });
 
-router.post('/review/delete/:reviewId', isLoggedIn, async(req, res) => {
+router.post('/review/delete/:teaId/:reviewId', isLoggedIn, async(req, res) => {
     try {
-        const { reviewId} = req.params;
-        const removeReview = await ReviewModel.findByIdAndRemove(reviewId);
-        const user = req.session.currentUser
-        await User.findByIdAndUpdate(removeReview.user_id, {$pull: {review: removeReview._id}})
+        const { teaId, reviewId } = req.params;
+        const {currentUser} = req.session;
+
+        await ReviewModel.findByIdAndRemove(reviewId);
+        await Tea.findByIdAndUpdate(teaId, {$pull: {review: reviewId}});
+        
+        
+        await User.findByIdAndUpdate(currentUser._id, {$pull: {review: reviewId}})
         
        
         res.redirect('/teas')

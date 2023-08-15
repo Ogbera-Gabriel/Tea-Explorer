@@ -19,12 +19,12 @@
 <!-- End of the Form to Create a Review -->
 <br>
 <!-- Display all the Reviews of the Book that we're seeing -->
-    {{#each teas.review}}
+    {{#each teasReviews}}
     <div>
         <!-- Actually displaying the review -->
-        <p><span>By {{review.author.username}}</span>: {{content}}</p>
+        <p><span>By {{author.username}}</span>: {{content}}</p>
         <!-- Deleting the Review -->
-        <form action="/review/delete/{{_id}}" method="post">
+        <form action="/review/delete/{{../teas._id}}/{{_id}}" method="post">
             <button type="submit">Delete</button>
         </form>
     </div>
