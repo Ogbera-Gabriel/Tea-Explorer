@@ -37,7 +37,7 @@ router.get('/teas/:teaId', isLoggedIn, async(req, res) =>{
         });
 
 
-        res.render('teas/teas-details.hbs', {teas: teasDetail, teasReviews: teasDetail.review})
+        res.render('teas/teas-details.hbs', {teas: teasDetail, teasReviews: teasDetail.review, user: req.session.currentUser})
     } catch (error) {
         console.log(error)
     }
@@ -115,5 +115,18 @@ router.post("/teas/favorite/:id", isLoggedIn, async (req, res, next) => {
       console.log("Error while viewing saved albums profile", error);
     }
   });
+  
+  router.post('/favorites/delete/:favoritesId', isLoggedIn, async (req, res) => {
+       try { 
+        const {favoritesId} = req.params;
+        const user = req.session.currentUser
+        // const removeFavorites = await User.findByIdAndRemove(favoritesId);
+        await User.findByIdAndUpdate(user._id, {$pull: {favorites: favoritesId}})
+        res.redirect('/favorites')
+  } catch (error) {
+    console.log('error', error)
+
+  }
+  })
 
 module.exports = router;

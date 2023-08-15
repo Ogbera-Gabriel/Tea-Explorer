@@ -13,4 +13,9 @@
 <p>Description: {{description}}</p>
 <p>Taste-Description: {{tasteDescription}}</p>
 
+ <form action="/favorites/delete/{{_id}}" method="post">
+            <button type="submit">Delete</button>
+        </form>
+
+
 {{/each}}
