@@ -1,8 +1,8 @@
 
-
+<div class="tea-list">
 <p>Hello: {{user.username}}</p>
  <hr>
-
+<div class="cotainer-fluid" style="margin: 0 15px;">
  <a href="/teas/create"><button class="btn btn-secondary">Create New Tea</button></a>
 <hr>
 <div class="row">
@@ -13,7 +13,7 @@
         <div class="card-body">
           <h5 class="card-title">{{name}}</h5>
           <p class="card-text">{{origin}}</p>
-          <a href="/teas/{{_id}}">See Details</a>
+         <button class="btn btn-success"> <a class="text-decoration-none text-capitalize text-white" href="/teas/{{_id}}"> Details</a></button>
           
         </div>
       </div>
@@ -22,4 +22,4 @@
   
   <hr />
 </div>
-   
+</div>

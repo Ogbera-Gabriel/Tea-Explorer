@@ -1,5 +1,7 @@
 body {
-  
+  background-image: url(/images/teafield.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
   
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
