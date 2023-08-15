@@ -66,6 +66,33 @@ router.get('/teas/:teaId', isLoggedIn, async(req, res) =>{
     }
 })
 
+router.get('/teas/:id/edit', isLoggedIn, async (req, res) =>{
+  try {
+    const { id } = req.params;
+    let teaEdit = await Tea.findById(id);
+    res.render('teas/teas-edit', {teaEdit})
+  } catch (error) {
+    console.log(error)
+  }
+})
+
+router.post('/teas/:id/edit', isLoggedIn, fileUploader.single("tea-cover-image"), async (req, res) =>{
+  try {
+    const { id } =req.params
+    const {name, origin, description, caffeine, tasteDescription, type , existingImage} = req.body
+    let image;
+    if(req.file){
+      image = req.file.path;
+    }else {
+      image = existingImage;
+    }
+
+    const editTea = await Tea.findByIdAndUpdate(id, {name, origin, description, caffeine, tasteDescription, type , image}, {new: true})
+    res.redirect(`/teas/${id}`)
+  } catch (error) {
+    console.log(error)
+  }
+})
 
 
 router.post('/review/create/:teaId', isLoggedIn, async (req, res) => {
