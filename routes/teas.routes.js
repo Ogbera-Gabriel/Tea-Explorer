@@ -9,7 +9,9 @@ const User = require("../models/User.model.js");
 router.get('/teas', isLoggedIn, async (req, res) => {
     try{
         let allTeasFromDB = await Tea.find()
-        res.render('teas/teas.hbs', {teas: allTeasFromDB})
+        const user = req.session.currentUser;
+        console.log(user)
+        res.render('teas/teas.hbs', {teas: allTeasFromDB, user})
     }
     catch(error){
         console.log(error)
