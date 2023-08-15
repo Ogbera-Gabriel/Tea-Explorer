@@ -43,6 +43,8 @@ router.get('/teas/:teaId', isLoggedIn, async(req, res) =>{
     }
 })
 
+
+
 router.post('/review/create/:teaId', isLoggedIn, async (req, res) => {
     try {
         const { teaId } = req.params;
@@ -85,5 +87,33 @@ router.post('/review/delete/:teaId/:reviewId', isLoggedIn, async(req, res) => {
     }
 })
 
+router.post("/teas/favorite/:id", isLoggedIn, async (req, res, next) => {
+    const { id } = req.params;
+    const currentUser = req.session.currentUser._id;
+    try {
+      const saveTea = await User.findByIdAndUpdate(currentUser, {
+        $push: { favorites: id },
+      });
+  
+      res.redirect(`/teas`);
+    } catch (error) {
+      console.log("Error while saving album to favorites:", error);
+    }
+  });
+
+
+  router.get("/favorites", isLoggedIn, async (req, res, next) => {
+    try {
+      const currentUser = req.session.currentUser._id;
+      console.log(currentUser)
+  
+      const user = await User.findById(currentUser).populate("favorites");
+      console.log(user)
+  
+      res.render("teas/teas-favorites", user);
+    } catch (error) {
+      console.log("Error while viewing saved albums profile", error);
+    }
+  });
 
 module.exports = router;

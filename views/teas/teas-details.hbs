@@ -10,6 +10,10 @@
 <p>Description: {{teas.description}}</p>
 <p>Taste-Description: {{teas.tasteDescription}}</p>
 
+<form action="/teas/favorite/{{teas._id}}" method="post">
+            <button type="submit">Add to favorites</button>
+        </form>
+
 <form action="/review/create/{{teas._id}}" method="post">
   
     <label for="content">Content</label>

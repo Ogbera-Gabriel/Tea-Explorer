@@ -1,0 +1,16 @@
+<h2>{{username}}'s favorite teas</h2>
+
+
+{{#each favorites}}
+<h3>{{name}}</h3>
+<div>
+    <img src="{{image}}"  width="600px" height="600px" alt="{{name}}">
+</div>
+
+<p>Type: {{type}}</p>
+<p>Origin : {{origin}}</p>
+<p>Caffeine: {{caffeine}}</p>
+<p>Description: {{description}}</p>
+<p>Taste-Description: {{tasteDescription}}</p>
+
+{{/each}}
