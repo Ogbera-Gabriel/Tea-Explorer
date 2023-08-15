@@ -88,7 +88,7 @@ router.post('/teas/:id/edit', isLoggedIn, fileUploader.single("tea-cover-image")
     }
 
     const editTea = await Tea.findByIdAndUpdate(id, {name, origin, description, caffeine, tasteDescription, type , image}, {new: true})
-    res.redirect(`/teas/${id}`)
+    res.redirect('/teas')
   } catch (error) {
     console.log(error)
   }
