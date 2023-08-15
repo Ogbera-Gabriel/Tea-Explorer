@@ -25,11 +25,11 @@
         
         <p><span>By {{author.username}}</span>: {{content}}</p>
         <!-- Deleting the Review -->
-        {{#if isauthor}}
+      
         <form action="/review/delete/{{../teas._id}}/{{_id}}" method="post">
             <button type="submit">Delete</button>
         </form>
-        {{/if}}
+    
         
     </div>
     {{/each}}
