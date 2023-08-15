@@ -4,7 +4,28 @@ const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 const ReviewModel = require("../models/Review.model.js");
 const User = require("../models/User.model.js");
+const fileUploader = require("../config/cloudinary.config");
 
+
+
+router.get("/teas/create", isLoggedIn, async (req, res) =>{
+  try {
+    res.render('teas/new-tea.hbs');
+  } catch (error) {
+    console.log(error);
+  }
+})
+
+
+router.post('teas/create', isLoggedIn, fileUploader.single("tea-cover-image"),  async(req, res) =>{
+ try {
+    const {name, origin, description, caffeine, tasteDescription, type} = req.body
+    await Tea.create({name, origin, description, caffeine, tasteDescription, type, image: req.file.path})
+    res.redirect("/teas");
+ } catch (error) { 
+   console.log(error);
+ }
+})
 
 router.get('/teas', isLoggedIn, async (req, res) => {
     try{
