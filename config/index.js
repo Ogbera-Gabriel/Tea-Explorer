@@ -27,7 +27,7 @@ const MongoStore = require("connect-mongo");
 
 // Connects the mongo uri to maintain the same naming structure
 const MONGO_URI =
-  process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/Tea-Explorer";
+"mongodb+srv://Gabriel:6IKVRbqusGKvLIew@cluster0.gses18a.mongodb.net/Tea";
 
 // Middleware configuration
 module.exports = (app) => {
