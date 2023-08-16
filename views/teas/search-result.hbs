@@ -1,0 +1,18 @@
+<div class="row">
+  {{#each teas}}
+    <div class="col-3 mb-4">
+      <div class="card h-100">
+        <img src="{{image}}" class="card-img-top" style=" height: 25vh; object-fit:cover;" alt="{{name}}">
+        <div class="card-body">
+          <h5 class="card-title">{{name}}</h5>
+          <p class="card-text">{{origin}}</p>
+         <button class="btn btn-success"> <a class="text-decoration-none text-capitalize text-white" href="/teas/{{_id}}"> Details</a></button>
+          
+        </div>
+      </div>
+    </div>
+  {{/each}}
+  {{#if errorMessage}}
+  <h1> {{errorMessage}} </h1>
+  <a href="/teas/create">Create a New Tea 🍵</a>
+  {{/if}}

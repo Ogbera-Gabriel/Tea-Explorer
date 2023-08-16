@@ -179,13 +179,17 @@ router.post("/teas/favorite/:id", isLoggedIn, async (req, res, next) => {
   }
   })
 
-  router.post('/search', isLoggedIn, async (req, res) =>{
+  router.get('/search', isLoggedIn, async (req, res) =>{
     try {
-      const searchQuery =req.query.name
+      const searchQuery = req.query.name
       let foundTea = await Tea.find({name: { $regex: searchQuery, $options: 'i' }})
       console.log(foundTea);
       const user = req.session.currentUser;
-      res.render('search-result', {teas: foundTea, user})
+      if(foundTea.length === 0){
+        res.render('teas/search-result', {errorMessage: 'Oops! We do not have this tea in our DB. Maybe try to create a new one? 😉'})
+      }
+      
+      res.render('teas/search-result', {teas: foundTea, user})
       
     } catch (error) {
       console.log(error)

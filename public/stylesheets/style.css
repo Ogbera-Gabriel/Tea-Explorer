@@ -33,6 +33,6 @@ h1 {
   display: block;
   margin: 25px auto;
 }
-btn-create {
-  border-color: antiquewhite;
+.btn-outline-success {
+  display: block
 }

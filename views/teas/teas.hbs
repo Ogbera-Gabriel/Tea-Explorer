@@ -2,6 +2,12 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-success  fixed-top">
             <div class="container-fluid">
               <a class="navbar-brand w-100 justify-content-between" href="#">TEA EXPLORER</a>
+   <form class="form-inline my-2 my-lg-0" action="/search" method="get">
+      <div class="input-group">
+        <input class="form-control mr-sm-2" name="name" type="text" placeholder="Search Tea" aria-label="Search">
+        <button class="btn btn-outline-light text-white my-2 my-sm-0" type="submit">Search</button>
+      </div>
+    </form>
               <a href="/teas/create" class="nav-link nav-item w-100 text-decoration-none text-light ">Add new tea</a>
               
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,6 +19,7 @@
                   <li class="nav-item">
                     <a class="nav-link active text-danger" aria-current="page" href="/">Home</a>
                   </li>
+                
                   <li class="nav-item">
                     <a class="nav-link" href="/teas">Teas</a>
                   </li>
