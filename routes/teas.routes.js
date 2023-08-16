@@ -10,6 +10,7 @@ const fileUploader = require("../config/cloudinary.config");
 
 
 
+
 router.get('/teas', isLoggedIn, async (req, res) => {
     try{
         let allTeasFromDB = await Tea.find()
@@ -195,6 +196,8 @@ router.post("/teas/favorite/:id", isLoggedIn, async (req, res, next) => {
       console.log(error)
     }
   })
+
+  
 
 
 
