@@ -48,12 +48,11 @@
 <p class="card-text">Taste-Description: {{teas.tasteDescription}}</p>
 </div>
 <div class="btn-group mx-2"> 
-<a href="/teas/{{teas._id}}/edit"><button class="btn btn-success mx-4">Add to favorites</button></a>
-            
-
 <form action="/teas/favorite/{{teas._id}}" method="post">
-            <button type="submit" class="btn btn-success btn-details">Edit</button>
-        </form>
+    <button type="submit" class="btn btn-success btn-details">Add to favorites</button>
+</form>
+<a href="/teas/{{teas._id}}/edit"><button class="btn btn-success mx-4">Edit</button></a>
+            
 </div>
 <form action="/review/create/{{teas._id}}" method="post">
   
