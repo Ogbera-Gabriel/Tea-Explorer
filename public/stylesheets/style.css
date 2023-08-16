@@ -36,3 +36,28 @@ h1 {
 .btn-outline-success {
   display: block
 }
+
+.tea-details-top {
+  height: 70px
+}
+
+.btn-group {
+  
+  display: flex;
+  justify-content: flex-end
+}
+  .comment {
+    margin-left: 25px;
+    width: 40%;
+    height: 100px;
+    padding: 10px;
+    background-color: #d0e2bc;
+  }
+
+  .review {
+    margin-left: 25px;
+    
+  }
+  .btn-comment-send {
+    margin-left: 35%
+  }

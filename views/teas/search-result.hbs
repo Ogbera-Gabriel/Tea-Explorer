@@ -1,7 +1,43 @@
-<div class="row">
+<div class="container-fluid">
+ <header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+  <div class="container-fluid">
+  <a class="navbar-brand justify-content-between" href="#">TEA EXPLORER</a>
+  <div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+    </button>
+     <div class="collapse navbar-collapse" id="navbarNavDropdown" >
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link text-danger" href="/">Home <span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/favorites">Favorites</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/teas">Teas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/teas/create">Add new tea</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0" action="/search" method="get">
+        <div class="input-group">
+          <input class="form-control mr-sm-2" name="name" type="text"  placeholder="Search" aria-label="Search">
+          <button class="btn btn-default btn-secondary text-white my-2 my-sm-0" type="submit">Search</button>
+        </div>
+      </form>
+    </div>
+  </div>
+ </div>
+</nav>
+</header>   
+<div style="height: 80px;"></div>
+
   {{#each teas}}
-    <div class="col-3 mb-4">
-      <div class="card h-100">
+    
+      <div class="card mx-auto mb-2" style="width: 35%">
         <img src="{{image}}" class="card-img-top" style=" height: 25vh; object-fit:cover;" alt="{{name}}">
         <div class="card-body">
           <h5 class="card-title">{{name}}</h5>
@@ -16,3 +52,5 @@
   <h1> {{errorMessage}} </h1>
   <a href="/teas/create">Create a New Tea 🍵</a>
   {{/if}}
+
+  </div>

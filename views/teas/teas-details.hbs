@@ -34,49 +34,50 @@
 
         </div>
     </header>
+<div class="tea-details-top"></div>
 
 <div class="card mx-auto" style="width: 40%">
+ <img src="{{teas.image}}" class="card-img-top" style="height: 40vh; object-fit:cover;" alt="{{teas.name}}">
 
-    <img src="{{teas.image}}" class="card-img-top" alt="{{teas.name}}">
-
-<div class="card-body"></div>
-<h2 class="card-title">Tea: {{teas.name}}</h2>
+<div class="card-body">
+<h2 class="card-title text-center">{{teas.name}}</h2>
 <p class="card-text">Type: {{teas.type}}</p>
 <p class="card-text">Origin : {{teas.origin}}</p>
 <p class="card-text">Caffeine: {{teas.caffeine}}</p>
 <p class="card-text">Description: {{teas.description}}</p>
 <p class="card-text">Taste-Description: {{teas.tasteDescription}}</p>
-
-<a href="/teas/{{teas._id}}/edit"><button>Edit</button></a>
+</div>
+<div class="btn-group mx-2"> 
+<a href="/teas/{{teas._id}}/edit"><button class="btn btn-success mx-4">Add to favorites</button></a>
             
 
 <form action="/teas/favorite/{{teas._id}}" method="post">
-            <button type="submit">Add to favorites</button>
+            <button type="submit" class="btn btn-success btn-details">Edit</button>
         </form>
-
+</div>
 <form action="/review/create/{{teas._id}}" method="post">
   
-    <label for="content">Content</label>
-    <textarea name="content" id="content" cols="30" rows="5"></textarea>
-    <button type="submit">Create the review</button>
+    <label for="content"></label>
+    <textarea name="content" id="content" cols="30" rows="5" class="comment">Leave your comment here</textarea>
+    <br>
+    <button type="submit" class="btn btn-sm btn-secondary  btn-comment-send">Send</button>
 </form>
-</div> 
-
-<!-- End of the Form to Create a Review -->
-<br>
-<!-- Display all the Reviews of the Book that we're seeing -->
-    {{#each teasReviews}}
-    <div>
+<div>
+ {{#each teasReviews}}
+    <div class="review">
         <!-- Actually displaying the review -->
-        
-        <p><span>By {{author.username}}</span>: {{content}}</p>
+        <div class="form-comment">
+        <p><span class="form-comment">By {{author.username}}</span>: {{content}}</p>
         <!-- Deleting the Review -->
         {{#ifCond author.username ../user.username}}
-        <form action="/review/delete/{{../teas._id}}/{{_id}}" method="post">
-            <button type="submit">Delete</button>
+        <form action="/review/delete/{{../teas._id}}/{{_id}}"  method="post">
+            <button class="btn btn-secondary btn-sm btn-comment" type="submit">Delete</button>
         </form>
         {{/ifCond}}
-    </div>
+      </div>
+      </div>
     {{/each}}
-    <a href="/teas">Return</a>
+    
+</div> 
+
 </div>
