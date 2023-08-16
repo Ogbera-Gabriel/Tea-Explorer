@@ -1,3 +1,42 @@
+<header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+  <div class="container-fluid">
+  <a class="navbar-brand justify-content-between" href="/">TEA EXPLORER</a>
+  <div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+    </button>
+     <div class="collapse navbar-collapse" id="navbarNavDropdown" >
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link text-danger" href="/">Home <span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/favorites">Favorites</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/teas">Teas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/teas/create">Add new tea</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/auth/logout">Logout</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0" action="/search" method="get">
+        <div class="input-group">
+          <input class="form-control mr-sm-2" name="name" type="text"  placeholder="Search" aria-label="Search">
+          <button class="btn btn-default btn-secondary text-white my-2 my-sm-0" type="submit">Search</button>
+        </div>
+      </form>
+    </div>
+  </div>
+ </div>
+</nav>
+</header>
+<div style="height: 85px;"></div>
+
 <h2>Edit Info</h2>
 <div class="row">
   <div class="col-md-6">
