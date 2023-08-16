@@ -1,4 +1,7 @@
-body {
+ body {
+  background-color: rgb(230, 222, 213);
+ }
+ .index {
   background-image: url(/images/teafield.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -12,4 +15,24 @@ a {
 
 h1 {
   color: 15px;
+}
+
+.btn-home {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  width: 90px;
+}
+
+.quote {
+  font-size: larger;
+  margin-top: 15%;
+  
+}
+.create {
+  display: block;
+  margin: 25px auto;
+}
+btn-create {
+  border-color: antiquewhite;
 }
