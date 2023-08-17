@@ -35,46 +35,52 @@
  </div>
 </nav>
 </header>
-<div style="height: 85px;"></div>
 
-<h2>Edit Info</h2>
-<div class="row">
-  <div class="col-md-6">
-    <form action="/teas/{{teaEdit.id}}/edit" method="post" enctype="multipart/form-data"> {{!-- !!! --}}
-      <div class="form-group">
-        <label>Name:
-          <input type="text" name="name" value ="{{teaEdit.name}}" class="form-control" />
-        </label>
+<div style="height: 50px;"></div>
+
+  <div class="card card-form card mx-auto" style="max-width: 600px; margin-top: 20px;">
+  <h2 class="card-title text-center mt-2">Edit Tea</h2>
+  <div class="card-body">
+    <form action="/teas/{{teaEdit.id}}/edit" method="post" enctype="multipart/form-data">
+      <div class="form-group mb-2">
+        <label for="name" class="mb-2">Name:</label>
+        <input type="text" id="name" name="name" value ="{{teaEdit.name}}" class="form-control">
+      </div>
+      
+      <div class="form-group mb-2">
+        <label for="description" class="mb-2">Description:</label>
+        <textarea id="description" name="description" cols="30" rows="4" class="form-control">{{teaEdit.description}}</textarea>
+      </div>
+      
+      <div class="form-group mb-2">
+        <label for="origin" class="mb2">Origin:</label>
+        <input type="text" id="origin" name="origin" value ="{{teaEdit.origin}}" class="form-control">
       </div>
 
-      <div class="form-group">
-        <label>Description:
-          <textarea name="description" cols="30" rows="4" class="form-control"> {{teaEdit.description}} </textarea>
-        </label>
+      <div class="form-group mb-2">
+        <label for="type" class="mb-2">Type:</label>
+        <input type="text" id="type" name="type"  value ="{{teaEdit.type}}" class="form-control">
       </div>
-      <label> Origin:
-       <input type="tel" name="origin" value ="{{teaEdit.origin}}" />
-      </label>
-      <label> Type:
-       <input type="tel" name="type" value ="{{teaEdit.type}}" />
-      </label>
-      <label> Caffeine:
-       <input type="tel" name="caffeine" value ="{{teaEdit.caffeine}}" />
-      </label>
-      <div class="form-group">
-        <label>Taste Description:
-          <textarea name="tasteDescription" cols="30" rows="4" class="form-control">{{teaEdit.tasteDescription}}</textarea>
-        </label>
+      
+      <div class="form-group mb-2">
+        <label for="caffeine" class="mb-2">Caffeine:</label>
+        <input type="text" id="caffeine" name="caffeine" value ="{{teaEdit.caffeine}}" class="form-control">
       </div>
-
-      <div class="form-group">
-        <label>Image:
-          <input type="file" name="tea-cover-image" class="form-control-file" />
-          <input type="text" name="existingImage" hidden value="{{teaEdit.image}}">
-        </label>
+  
+      <div class="form-group mb-2">
+        <label for="tasteDescription" class="mb-2">Taste Description:</label>
+          <textarea id="tasteDescription" name="tasteDescription" cols="30" rows="4" class="form-control">{{teaEdit.tasteDescription}}</textarea>
       </div>
-
-      <button type="submit" class="btn btn-primary">Edit</button>
+      
+       <div class="form-group mb-2">
+        <label for="tea-cover-image" class="custom-file-label mb-2">Image:</label>
+          <input type="file" name="tea-cover-image" id="tea=cover-image" class="form-control-file" />
+          <input type="file" name="existingImage" hidden value="{{teaEdit.image}}">   
+       </div>
+      
+      <div class="form-group d-flex justify-content-end">
+        <button type="submit" class="btn btn-success btn-block">Edit</button>
+      </div>
     </form>
   </div>
 </div>
