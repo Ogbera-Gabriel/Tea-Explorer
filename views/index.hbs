@@ -1,12 +1,12 @@
-<body class="index" class="text-center"> 
+<!--<body class="index" class="text-center"> 
     <div class="cover-container d-flex h100 p3 mx-auto flex-column mt-5">
     <main role="main" class="inner cover text-center">
         <h1 class="cover-heading text-center">Welcome to Tea Explorer</h1>
         <p class="lead text-center">
         Discover more about the world of teas
         
-       <div> <a href="/auth/signup" class="btn  btn-secondary btn-home">Sign Up</a>
-             <a href="/teas" class="btn  btn-secondary btn-home">Log in</a>
+       <div> <a href="/auth/signup" class="btn  btn-dark btn-home bg-transparent">Sign Up</a>
+             <a href="/teas" class="btn  btn-dark btn-home bg-transparent">Log in</a>
        </div>
         </p>
       {{!-- <div class="quote">
@@ -14,9 +14,39 @@
         <p class="text-black">Catherine Douzel</p>
     </div> --}}
     <div class="quote mx-auto">
-    <q class="text-center text-light">{{teaQuote}}</q>
+    <q>{{teaQuote}}</q>
     </div>
     
     </main>
     </div>
-</body>   
+</body>   -->
+
+
+<body class="index text-center">
+  <div class="cover-container d-flex h100 p3 mx-auto flex-column mt-5">
+    <main role="main" class="inner cover text-center">
+      <h1 class="cover-heading text-center">Welcome to Tea Explorer</h1>
+      <p class="lead text-center">
+        Discover more about the world of teas
+        <div>
+          <a href="/auth/signup" class="btn btn-dark btn-home bg-transparent">Sign Up</a>
+          <a href="/teas" class="btn btn-dark btn-home bg-transparent">Log in</a>
+        </div>
+      </p>
+      <div class="quote mx-auto">
+        <q>{{teaQuote}}</q>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer Section -->
+  
+  <footer class="footer">
+   <footer class="footer">
+    <div class="footer-content">
+      <p>Built by Gabriel Obrega <a href="https://www.linkedin.com/in/johndoe" target="_blank" rel="noopener noreferrer"><img src="linkedin-icon.png" alt=""></a>| Julia Guillotte <a href="https://www.linkedin.com/in/janesmith" target="_blank" rel="noopener noreferrer"><img src="linkedin-icon.png" alt=""></a></p>
+    </div>
+  </footer>
+  </footer>
+</body>
+</html>

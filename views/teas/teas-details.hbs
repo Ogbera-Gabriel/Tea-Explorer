@@ -34,7 +34,7 @@
 </header>
 <div class="tea-details-top"></div>
 
-<div class="card mx-auto" style="width: 40%">
+<div class="card mx-auto" style="max-width: 600px; margin-top: 20px;">
  <img src="{{teas.image}}" class="card-img-top" style="height: 40vh; object-fit:cover;" alt="{{teas.name}}">
 
 <div class="card-body">
@@ -59,11 +59,13 @@
     <br>
     <button type="submit" class="btn btn-sm btn-secondary  btn-comment-send">Send</button>
 </form>
+ 
 <div>
  {{#each teasReviews}}
     <div class="review">
         <!-- Actually displaying the review -->
-        <div class="form-comment">
+      <div class="form-comment">
+        <div class="review-meta">
         <p><span class="form-comment">By {{author.username}}</span>: {{content}}</p>
         <!-- Deleting the Review -->
         {{#ifCond author.username ../user.username}}
@@ -71,10 +73,13 @@
             <button class="btn btn-secondary btn-sm btn-comment" type="submit">Delete</button>
         </form>
         {{/ifCond}}
-      </div>
+        </div>
+       </div>
       </div>
     {{/each}}
     
 </div> 
+
+
 
 </div>

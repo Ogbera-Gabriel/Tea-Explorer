@@ -1,5 +1,6 @@
+<div class="container-fluid">
  <header>
-<nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container-fluid">
   <a class="navbar-brand justify-content-between" href="/">TEA EXPLORER</a>
   <div>
@@ -26,7 +27,7 @@
       </ul>
       <form class="form-inline my-2 my-lg-0" action="/search" method="get">
         <div class="input-group">
-          <input class="form-control mr-sm-2" name="name" type="text"  placeholder="Search" aria-label="Search">
+          <input class="form-control mr-sm-2" name="name" type="text"  placeholder="Search for tea" aria-label="Search">
           <button class="btn btn-default btn-secondary text-white my-2 my-sm-0" type="submit">Search</button>
         </div>
       </form>
@@ -35,45 +36,55 @@
  </div>
 </nav>
 </header>   
-<div style="height: 80px;"></div>
-<h2>New Tea</h2>
-<div class="row">
-  <div class="col-md-6">
-    <form action="/teas/create" method="post" enctype="multipart/form-data"> {{!-- !!! --}}
-      <div class="form-group">
-        <label>Name:
-          <input type="text" name="name" class="form-control" />
-        </label>
-      </div>
+<div style="height: 60px;"></div>
 
+  <div class="card card-form card mx-auto" style="max-width: 600px; margin-top: 20px;">
+  <h2 class="card-title text-center mt-2">New Tea</h2>
+  <div class="card-body">
+    <form action="/teas/create" method="post" enctype="multipart/form-data">
       <div class="form-group">
-        <label>Description:
-          <textarea name="description" cols="30" rows="4" class="form-control"> </textarea>
-        </label>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" class="form-control">
       </div>
-      <label> Origin:
-       <input type="tel" name="origin" />
-      </label>
       
-      <label> Type:
-       <input type="tel" name="type" />
-      </label>
-      <label> Caffeine:
-       <input type="tel" name="caffeine" />
-      </label>
       <div class="form-group">
-        <label>Taste Description:
-          <textarea name="tasteDescription" cols="30" rows="4" class="form-control"> </textarea>
-        </label>
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" cols="30" rows="4" class="form-control"></textarea>
       </div>
-
+      
       <div class="form-group">
-        <label>Image:
-          <input type="file" name="tea-cover-image" class="form-control-file" />
-        </label>
+        <label for="origin">Origin:</label>
+        <input type="text" id="origin" name="origin" class="form-control">
       </div>
-
-      <button type="submit" class="btn btn-primary">Create</button>
+      
+      <div class="form-group">
+        <label for="type">Type:</label>
+        <input type="text" id="type" name="type" class="form-control">
+      </div>
+      
+      <div class="form-group">
+        <label for="caffeine">Caffeine:</label>
+        <input type="text" id="caffeine" name="caffeine" class="form-control">
+      </div>
+      
+      <div class="form-group">
+        <label for="tasteDescription">Taste Description:</label>
+        <textarea id="tasteDescription" name="tasteDescription" cols="30" rows="4" class="form-control"></textarea>
+      </div>
+      
+      <div class="form-group">
+        <label for="tea-cover-image" class="custom-file-label">Image:</label>
+        <input type="file" id="tea-cover-image" name="tea-cover-image" class="form-control-file custom-file-input">
+      </div>
+      
+      <div class="form-group d-flex justify-content-end">
+        <button type="submit" class="btn btn-success btn-block">Create</button>
+      </div>
     </form>
   </div>
 </div>
+
+
+
+ </div> 
+

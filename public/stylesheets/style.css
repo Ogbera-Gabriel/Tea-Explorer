@@ -1,5 +1,6 @@
  body {
   background-color: rgb(230, 222, 213);
+  font: 14px "Rajdani", Helvetica, Arial, sans-serif;
  }
  .index {
   background-image: url(/images/teafield.jpeg);
@@ -8,6 +9,44 @@
   
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+
+.navbar {
+  background-color: #497b5f;
+}
+
+.btn {
+  background-color: #497b5f;
+
+}
+
+.footer {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  
+  
+}
+
+.footer p {
+  margin: 0;
+  color:#100f0f;
+  font-size: large;
+  font-weight: bolder;
+  
+}
+
+.footer-icons a {
+  color: #fff;
+  margin: 0 5px;
+  text-decoration: none;
+}
+.footer-content, .footer-icons {
+  display: inline-block;
+  background-color: #cccccc5d;
+  
+}
+
 
 a {
   color: #00b7ff;
@@ -21,14 +60,29 @@ h1 {
   display: inline-block;
   text-align: center;
   vertical-align: middle;
+  color: rgb(69, 68, 67);
   width: 90px;
 }
 
 .quote {
-  font-size: larger;
-  margin-top: 15%;
-  
+    margin-top: 12%;
+    font-size: medium;
+    font-style: italic;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
 }
+.quote q {
+    width: 45vw;
+    font-size: larger;
+    text-align: center;
+    color: rgb(231, 226, 219);
+    
+}
+  
+
 .create {
   display: block;
   margin: 25px auto;
@@ -60,4 +114,56 @@ h1 {
   }
   .btn-comment-send {
     margin-left: 35%
+  }
+
+  .review-meta {
+    display: flex;
+    align-items: center
+  }
+  .form-comment {
+    flex-grow: 1;
+    
+
+  }
+
+  .btn-comment {
+    margin-left: 10px;
+    
+  }
+
+  .form-group {
+    margin-left: 10%;
+    margin-right: 10%
+  }
+
+  .card-form {
+    background-color: #d0e2bc;
+  }
+
+  .custom-file-input {
+    
+    margin-bottom: 10px;
+    margin-top: 10px;
+    
+  }
+  .custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+  .login {
+    background-image: url(/images/teafield.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .card-login {
+    background: rgb(190,224,153);
+background: radial-gradient(circle, rgba(190,224,153,1) 0%, rgba(172,241,213,0.8449973739495799) 50%, rgba(231,195,144,1) 100%);
+  }
+
+  .form-control {
+    background-color: rgb(230, 222, 213);;
   }
