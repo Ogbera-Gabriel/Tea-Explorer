@@ -30,6 +30,11 @@ Tea-Explorer is a web application that provides a database of teas, allowing use
 - Express: Backend framework for handling routes and requests.
 - Bootstrap: CSS framework for responsive and appealing design.
 
+## Resources 
+
+- Boonaki API tea database [https://boonaki.me/tea-api]
+- Images http://icon8.com
+
 ## Getting Started
 
 To run the project locally:
