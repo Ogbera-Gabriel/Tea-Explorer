@@ -1,5 +1,5 @@
 <header>
-<nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container-fluid">
   <a class="navbar-brand justify-content-between" href="/">TEA EXPLORER</a>
   <div>
@@ -39,11 +39,11 @@
 
 <div class="card-body">
 <h2 class="card-title text-center">{{teas.name}}</h2>
-<p class="card-text">Type: {{teas.type}}</p>
-<p class="card-text">Origin : {{teas.origin}}</p>
-<p class="card-text">Caffeine: {{teas.caffeine}}</p>
-<p class="card-text">Description: {{teas.description}}</p>
-<p class="card-text">Taste-Description: {{teas.tasteDescription}}</p>
+<p class="card-text"><span class="h5 font-weight-bold">Type:</span> {{teas.type}}</p>
+<p class="card-text"><span class="h5 font-weight-bold">Origin:</span> {{teas.origin}}</p>
+<p class="card-text"><span class="h5 font-weight-bold">Caffeine:</span> {{teas.caffeine}}<p>
+<p class="card-text"><span class="h5 font-weight-bold">Description:</span> {{teas.description}}</p>
+<p class="card-text"><span class="h5 font-weight-bold">Taste-Description:</span> {{teas.tasteDescription}}</p>
 </div>
 <div class="btn-group mx-2"> 
 <form action="/teas/favorite/{{teas._id}}" method="post">
@@ -66,7 +66,7 @@
         <!-- Actually displaying the review -->
       <div class="form-comment">
         <div class="review-meta">
-        <p><span class="form-comment">By {{author.username}}</span>: {{content}}</p>
+        <p><span class="form-comment"><i>By {{author.username}}</span>: {{content}}<i></p>
         <!-- Deleting the Review -->
         {{#ifCond author.username ../user.username}}
         <form action="/review/delete/{{../teas._id}}/{{_id}}"  method="post">

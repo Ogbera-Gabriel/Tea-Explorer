@@ -1,6 +1,8 @@
  body {
-  background-color: rgb(230, 222, 213);
-  font: 14px "Rajdani", Helvetica, Arial, sans-serif;
+  /*background-color: #e6ded5;*/
+  background: rgb(230,222,213);
+  background: radial-gradient(circle, rgba(230,222,213,1) 21%, rgba(143,156,130,1) 100%);
+  font: 15px "Lucida Grande", Helvetica, Arial, sans-serif;
  }
  .index {
   background-image: url(/images/teafield.jpeg);
@@ -8,6 +10,15 @@
   background-repeat: no-repeat;
   
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+.new-tea {
+  background-image: url(/images/tea-background.jpeg);
+  
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.tea-list {
+  background-color: #e6ded5;
 }
 
 .navbar {
@@ -65,7 +76,7 @@ h1 {
 }
 
 .quote {
-    margin-top: 12%;
+    margin-top: 10%;
     font-size: medium;
     font-style: italic;
     display: flex;
@@ -138,6 +149,7 @@ h1 {
 
   .card-form {
     background-color: #d0e2bc;
+    opacity: 95%;
   }
 
   .custom-file-input {
@@ -160,8 +172,8 @@ h1 {
   }
   
   .card-login {
-    background: rgb(190,224,153);
-background: radial-gradient(circle, rgba(190,224,153,1) 0%, rgba(172,241,213,0.8449973739495799) 50%, rgba(231,195,144,1) 100%);
+   background: rgb(190,224,153);
+   background: radial-gradient(circle, rgba(190,224,153,1) 0%, rgba(172,241,213,0.8449973739495799) 50%, rgba(231,195,144,1) 100%);
   }
 
   .form-control {
