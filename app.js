@@ -13,6 +13,7 @@ const express = require("express");
 // https://www.npmjs.com/package/hbs
 const hbs = require("hbs");
 
+// enables ===(strict if comparisons) in handlebars, used in delete review by author
 hbs.registerHelper('ifCond', function(v1, v2, options) {
     if(v1 === v2) {
       return options.fn(this);

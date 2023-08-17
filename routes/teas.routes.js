@@ -143,7 +143,7 @@ router.post("/teas/favorite/:id", isLoggedIn, async (req, res, next) => {
     const currentUser = req.session.currentUser._id;
     try {
       const saveTea = await User.findByIdAndUpdate(currentUser, {
-        $push: { favorites: id },
+        $addToSet: { favorites: id },
       });
   
       res.redirect(`/teas`);
