@@ -6,11 +6,6 @@ const ReviewModel = require("../models/Review.model.js");
 const User = require("../models/User.model.js");
 const fileUploader = require("../config/cloudinary.config");
 
-
-
-
-
-
 router.get('/teas', isLoggedIn, async (req, res) => {
     try{
         let allTeasFromDB = await Tea.find()

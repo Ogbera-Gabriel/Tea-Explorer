@@ -40,26 +40,6 @@
 <div class="container-fluid">
 <h2 class="text-center text-secondary">{{username}}'s favorite teas</h2>
 
-<!--
-{{#each favorites}}
-<h3>{{name}}</h3>
-<div>
-    <img src="{{image}}"  width="600px" height="600px" alt="{{name}}">
-</div>
-
-<p>Type: {{type}}</p>
-<p>Origin : {{origin}}</p>
-<p>Caffeine: {{caffeine}}</p>
-<p>Description: {{description}}</p>
-<p>Taste-Description: {{tasteDescription}}</p>
-
- <form action="/favorites/delete/{{_id}}" method="post">
-            <button type="submit">Delete</button>
-        </form>
-    
-
-{{/each}}
- --> 
   <div class="row">
   {{#each favorites}}
     <div class="col-md-3 col-sm-6 col-12 mb-4 mt-4">
